@@ -1,5 +1,6 @@
-import FAQItem from './FAQItem';
 import styles from './FAQList.module.css';
+import { CAccordion, CAccordionItem, CAccordionHeader, CAccordionBody } from '@coreui/react';
+
 
 const faqData = [
   {
@@ -18,11 +19,23 @@ const faqData = [
 
 const FAQList = () => {
   return (
-    <div className={styles.faqContainer}>
-      <h2 className={styles.faqTitle}>Foire Aux Questions</h2> {/* Or whatever title they use */}
-      {faqData.map((faq, index) => (
-        <FAQItem key={index} question={faq.question} answer={faq.answer} />
-      ))}
+    // You can add a container class here if you need specific layout for the whole list
+    // <div className={styles.faqListContainer}>
+    <div>
+      <CAccordion alwaysOpen={false}> {/* `alwaysOpen={false}` makes it behave like a typical accordion (only one item open at a time). Remove or set to true to allow multiple open. */}
+        {faqData.map((faqItem, index) => (
+          <CAccordionItem itemKey={faqItem.id || index} key={faqItem.id || index}>
+            <CAccordionHeader>
+              {faqItem.question}
+            </CAccordionHeader>
+            <CAccordionBody>
+              {/* The default styling for CAccordionBody might not use a <p> tag,
+                  so wrapping in <p> is good for semantic HTML and consistent styling. */}
+              <p>{faqItem.answer}</p>
+            </CAccordionBody>
+          </CAccordionItem>
+        ))}
+      </CAccordion>
     </div>
   );
 };
