@@ -1,0 +1,70 @@
+/* Example - GET EXACT STYLES FROM ALEO SITE */
+.faqItem {
+  border-bottom: 1px solid #e0e0e0; /* Example color */
+  margin-bottom: 1rem;
+}
+
+.questionHeader {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'YourAleoFont', sans-serif; /* Replace with actual font */
+  font-size: 1.2rem; /* Example size */
+  color: #333; /* Example color */
+}
+
+.questionHeader:hover {
+  /* Optional: hover styles */
+}
+
+.questionText {
+  /* Styles for question text */
+}
+
+.icon {
+  font-size: 1.5rem; /* Example size */
+  color: #007bff; /* Example color, match Aleo's icon color */
+}
+
+.answer {
+  padding: 1rem 0.5rem;
+  font-family: 'YourAleoFont', sans-serif; /* Replace with actual font */
+  color: #555; /* Example color */
+  line-height: 1.6;
+
+  /* ---- Core properties for max-height transition ---- */
+  overflow: hidden;
+  max-height: 0; /* Initial state: closed/collapsed */
+  transition: max-height 1s ease-out; /* Animate the max-height property */
+  /* visibility: hidden; /* Optional: can help with performance/tabbing, see note below */
+  /* opacity: 0; /* Optional: can be transitioned along with max-height */
+  /* transition: max-height 0.5s ease-out, opacity 0.3s ease-out; /* Example if transitioning opacity too */
+}
+
+/* When the FAQ item is open (you'd apply this class or handle via conditional styles) */
+.answerOpen { /* You might not need this if using the inline style approach for animation */
+  max-height: 600px; /* Adjust to be larger than any possible answer height */
+}
+
+.answerContent { /* This inner div handles padding and holds the actual text */
+  padding: 1rem 0.5rem; /* All your padding goes here */
+  font-family: 'YourAleoFont', sans-serif; /* Replace with actual font */
+  color: #555; /* Example color */
+  line-height: 1.6;
+  /* Any other styles for the text content itself */
+}
+
+/* If you're directly toggling content like in the JS example: */
+/* .answer when isOpen is true will be displayed.
+   You can control animation with a library or more complex CSS.
+   For a simple max-height animation:
+*/
+.answer p { /* Or directly on .answer */
+  /* Initial state often handled by the {isOpen && ...} in JSX */
+}

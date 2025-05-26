@@ -1,71 +1,32 @@
-import { useCallback, useEffect, useState } from 'react'
-import Button from '../components/Button'
-import ClickCount from '../components/ClickCount'
-import styles from '../styles/home.module.css'
+// Assuming this file is, for example, pages/foire-aux-questions.js or a component used elsewhere
+// If it's a page, the filename dictates the route.
 
-function throwError() {
-  console.log(
-    // The function body() is not defined
-    document.body()
-  )
-}
+import { useCallback, useEffect, useState } from 'react'; // These were in your original code, keep if needed for other things in this component
+import Button from '../components/Button'; // From your original code
+import ClickCount from '../components/ClickCount'; // From your original code
+import styles from './index.module.css'; // The './' indicates the current directory
 
-function Home() {
-  const [count, setCount] = useState(0)
-  const increment = useCallback(() => {
-    setCount((v) => v + 1)
-  }, [setCount])
+// Import the FAQList component we created
+import FAQList from '../components/FAQList'; // Adjust path if your components folder is structured differently
 
-  useEffect(() => {
-    const r = setInterval(() => {
-      increment()
-    }, 1000)
-
-    return () => {
-      clearInterval(r)
-    }
-  }, [increment])
-
+// Your main component, now named to reflect it might be a page or a self-contained FAQ section
+function FaqPage() { // Renamed for clarity if this is intended to be a page component
   return (
-    <main className={styles.main}>
-      <h1>Fast Refresh Demo</h1>
-      <p>
-        Fast Refresh is a Next.js feature that gives you instantaneous feedback
-        on edits made to your React components, without ever losing component
-        state.
-      </p>
-      <hr className={styles.hr} />
-      <div>
-        <p>
-          Auto incrementing value. The counter won't reset after edits or if
-          there are errors.
-        </p>
-        <p>Current value: {count}</p>
-      </div>
-      <hr className={styles.hr} />
-      <div>
-        <p>Component with state.</p>
-        <ClickCount />
-      </div>
-      <hr className={styles.hr} />
-      <div>
-        <p>
-          The button below will throw 2 errors. You'll see the error overlay to
-          let you know about the errors but it won't break the page or reset
-          your state.
-        </p>
-        <Button
-          onClick={(e) => {
-            setTimeout(() => document.parentNode(), 0)
-            throwError()
-          }}
-        >
-          Throw an Error
-        </Button>
-      </div>
-      <hr className={styles.hr} />
-    </main>
-  )
+    <div>
+      <section className={styles.header}>
+        <div className={styles.container}>
+          <h1 className={styles.title}>Foire aux questions ALEO</h1>
+          <h2 className={styles.subtitle}>Une question ? Une réponse !</h2>
+          <p className={styles.paragraph}>Retrouvez ci-dessous toutes nos explications et contactez-nous pour plus d’informations.</p>
+          <button className={styles.contact_button}>Nous contacter</button>
+        </div>
+      </section>
+      <FAQList />
+
+      <ClickCount />
+      {/* <Button onClick={throwError}>Test Error</Button> */}
+    </div>
+  );
 }
 
-export default Home
+export default FaqPage; // If this is a page in the `pages` directory, export default is important

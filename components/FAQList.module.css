@@ -1,0 +1,14 @@
+/* Example - GET EXACT STYLES FROM ALEO SITE */
+.faqContainer {
+  max-width: 800px; /* Example width, match Aleo's */
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.faqTitle {
+  font-family: 'YourAleoHeadingFont', sans-serif; /* Replace with actual heading font */
+  font-size: 2.5rem; /* Example */
+  color: #222; /* Example */
+  text-align: center; /* If their title is centered */
+  margin-bottom: 2rem;
+}
