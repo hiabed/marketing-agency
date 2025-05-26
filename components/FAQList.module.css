@@ -1,14 +1,90 @@
-/* Example - GET EXACT STYLES FROM ALEO SITE */
 .faqContainer {
-  max-width: 800px; /* Example width, match Aleo's */
-  margin: 2rem auto;
-  padding: 1rem;
+  max-width: 100%;
 }
 
 .faqTitle {
-  font-family: 'YourAleoHeadingFont', sans-serif; /* Replace with actual heading font */
-  font-size: 2.5rem; /* Example */
-  color: #222; /* Example */
-  text-align: center; /* If their title is centered */
+  font-size: 2rem;
+  font-weight: bold;
+  color: #581c87; /* Purple color matching Aleo design */
+  font-style: italic;
   margin-bottom: 2rem;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faqItem {
+  background-color: #dbeafe; /* Light blue background */
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.faqButton {
+  width: 100%;
+  padding: 1.5rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.faqButton:hover {
+  background-color: #bfdbfe; /* Slightly darker blue on hover */
+}
+
+.faqQuestion {
+  color: #1f2937; /* Dark gray text */
+  font-weight: 500;
+  padding-right: 1rem;
+  line-height: 1.5;
+}
+
+.faqIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #6b7280; /* Gray color */
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.faqIconRotated {
+  transform: rotate(45deg);
+}
+
+.faqAnswer {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.faqAnswerContent {
+  border-top: 1px solid #93c5fd; /* Blue border */
+  padding-top: 1rem;
+}
+
+.faqAnswerContent p {
+  color: #374151; /* Dark gray text */
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .faqTitle {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .faqButton {
+    padding: 1rem;
+  }
+  
+  .faqAnswer {
+    padding: 0 1rem 1rem 1rem;
+  }
 }
