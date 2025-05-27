@@ -1,78 +1,125 @@
-// FAQList.js
+// pages/FAQList.js
 "use client";
 
-import { useState } from "react";
-import { Plus } from 'lucide-react'; // Assuming you still want to use Plus and handle rotation via CSS
-import styles from './FAQList.module.css'; // Assuming this CSS file exists and is correctly styled
+import { useState, useEffect, useRef } from 'react';
+import { allFaqData } from './FAQ-data'; // Adjust path if needed
+import FAQItem from './FAQItem'; // Adjust path
+// If using shadcn/ui button for nav links:
+// import { Button } from "@/components/ui/button"; // Assuming shadcn is setup
 
-const faqData = [
-  {
-    question: "Est-il possible de modifier mon site internet ALEO après sa réalisation ?",
-    answer:
-      "Oui, il est tout à fait possible de modifier votre site internet après sa réalisation. Nous proposons des services de maintenance et de mise à jour pour que votre site reste toujours actuel et performant.",
-  },
-  {
-    question: "Quel est le prix de la création d'un site web ?",
-    answer:
-      "Le prix de création d'un site web varie selon vos besoins spécifiques, les fonctionnalités souhaitées et la complexité du projet. Nous vous proposons un devis personnalisé après étude de votre projet.",
-  },
-  {
-    question: "Pour la refonte de mon site internet, puis-je me tourner vers ALEO ?",
-    answer:
-      "Absolument ! ALEO accompagne les entreprises dans la refonte complète de leur site internet. Nous analysons votre site actuel et proposons des améliorations adaptées à vos objectifs.",
-  },
-  {
-    question: "Proposez-vous des designs personnalisés ou utilisez-vous des templates ?",
-    answer:
-      "Nous proposons les deux options selon vos besoins et votre budget. Nous pouvons créer des designs entièrement personnalisés ou adapter des templates premium à votre identité visuelle.",
-  },
-];
+export default function FAQPageWithSidebar() {
+  const [activeSection, setActiveSection] = useState(allFaqData[0]?.id || '');
+  const sectionRefs = useRef({}); // To store refs to content sections
 
-const FAQList = () => {
-  // Removed TypeScript type annotation: <number | null>
-  const [openFaq, setOpenFaq] = useState(null);
+  // Scroll to section on sidebar click
+  const handleNavClick = (sectionId) => {
+    setActiveSection(sectionId); // Set active immediately for visual feedback
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  // Intersection Observer for updating active section on scroll
+  useEffect(() => {
+    const observerOptions = {
+      root: null, // relative to document viewport
+      rootMargin: '0px',
+      threshold: 0.4, // When 40% of the section is visible
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const sections = Object.values(sectionRefs.current);
+
+    sections.forEach(section => {
+      if (section) observer.observe(section);
+    });
+
+    // Initial check for first section if not already set by observer
+    if (allFaqData.length > 0 && !sections.some(s => s && s.id === activeSection)) {
+        setActiveSection(allFaqData[0].id);
+    }
+
+
+    return () => {
+      sections.forEach(section => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, [activeSection]); // Rerun effect if data changes (though faqData is static here)
+
+
+  // Effect for initial active section (focus first element)
+  useEffect(() => {
+    if (allFaqData.length > 0) {
+      setActiveSection(allFaqData[0].id);
+    }
+  }, []);
+
 
   return (
-    <div className={styles.faqContainer}>
-      <h2 className={styles.faqTitle}>Site Internet</h2>
-      
-      <div className={styles.faqList}>
-        {faqData.map((item, index) => (
-          <div key={index} className={styles.faqItem}>
-            <button
-              onClick={() => setOpenFaq(openFaq === index ? null : index)}
-              className={styles.faqButton}
-              // For accessibility, it's good to indicate the expanded state
-              aria-expanded={openFaq === index}
-              aria-controls={`faq-answer-${index}`}
-            >
-              <span className={styles.faqQuestion}>{item.question}</span>
-              <Plus
-                className={`${styles.faqIcon} ${openFaq === index ? styles.faqIconRotated : ''}`}
-                // You might want to change the icon based on state, e.g. <Minus /> when open
-                // Or handle the + to - transformation purely with CSS on .faqIconRotated
-              />
-            </button>
+    <div className="flex flex-col md:flex-row min-h-screen">
+      {/* Sidebar Navigation */}
+      <aside className="w-full md:w-1/4 lg:w-1/5 p-4 md:p-8 bg-gray-50 border-r border-gray-200 md:sticky md:top-0 md:h-screen md:overflow-y-auto">
+        <nav>
+          <ul className="space-y-2">
+            {allFaqData.map(section => (
+              <li key={section.id}>
+                <button
+                  onClick={() => handleNavClick(section.id)}
+                  // If using shadcn/ui Button:
+                  // asChild
+                  // variant={activeSection === section.id ? "secondary" : "ghost"} 
+                  // className={`w-full justify-start text-left px-3 py-2 rounded-md text-sm font-medium 
+                  //   ${activeSection === section.id 
+                  //     ? 'bg-red-100 text-red-700' // Active: light red
+                  //     : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}
+                  className={`w-full text-left px-3 py-2 rounded-md text-sm font-medium block
+                    ${activeSection === section.id 
+                      ? 'bg-red-100 text-red-700 font-semibold' // Active: light red
+                      : 'text-gray-600 hover:bg-gray-200 hover:text-gray-800'}`}
+                >
+                  {section.categoryTitle}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
 
-            {/*
-              If you want a CSS transition for opening/closing,
-              this conditional rendering approach will make it harder.
-              You might need to always render the div and toggle a class for max-height animation,
-              as discussed in previous examples.
-              However, if you're okay with instant show/hide, this is fine.
-            */}
-            {openFaq === index && (
-              <div id={`faq-answer-${index}`} className={styles.faqAnswer}>
-                <div className={styles.faqAnswerContent}>
-                  <p>{item.answer}</p>
-                </div>
-              </div>
-            )}
-          </div>
+      {/* Main Content Area */}
+      <main className="w-full md:w-3/4 lg:w-4/5 p-4 md:p-8 overflow-y-auto">
+        {allFaqData.map(section => (
+          <section 
+            key={section.id} 
+            id={section.id}
+            ref={el => sectionRefs.current[section.id] = el} // Assign ref for IntersectionObserver
+            className="mb-12 pt-16 -mt-16" // pt and -mt for scroll offset if you have a sticky header
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 border-b pb-3">
+              {section.categoryTitle}
+            </h2>
+            <div className="space-y-4">
+              {section.questions.map((q, index) => (
+                <FAQItem
+                  key={`${section.id}-q-${index}`}
+                  id={`${section.id}-q-${index}`} // Unique ID for aria-controls
+                  question={q.question}
+                  answer={q.answer}
+                />
+              ))}
+            </div>
+          </section>
         ))}
-      </div>
+      </main>
     </div>
   );
-};
-
-export default FAQList;
+}

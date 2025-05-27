@@ -21,7 +21,10 @@ function FaqPage() { // Renamed for clarity if this is intended to be a page com
           <button className={styles.contact_button}>Nous contacter</button>
         </div>
       </section>
-      <FAQList />
+      <div>
+        <navigator></navigator>
+        <FAQList />
+      </div>
 
       <ClickCount />
       {/* <Button onClick={throwError}>Test Error</Button> */}
