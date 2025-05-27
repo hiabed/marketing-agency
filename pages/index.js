@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from 'react'; // These were in your 
 import Button from '../components/Button'; // From your original code
 import ClickCount from '../components/ClickCount'; // From your original code
 import styles from './index.module.css'; // The './' indicates the current directory
-
+import ContactUs from '../components/ContactUs'
 // Import the FAQList component we created
 import FAQList from '../components/FAQList'; // Adjust path if your components folder is structured differently
 
@@ -21,10 +21,8 @@ function FaqPage() { // Renamed for clarity if this is intended to be a page com
           <button className={styles.contact_button}>Nous contacter</button>
         </div>
       </section>
-      <div>
-        <FAQList />
-      </div>
-
+      <FAQList />
+      <ContactUs/>
       <ClickCount />
       {/* <Button onClick={throwError}>Test Error</Button> */}
     </div>
