@@ -22,7 +22,6 @@ function FaqPage() { // Renamed for clarity if this is intended to be a page com
         </div>
       </section>
       <div>
-        <navigator></navigator>
         <FAQList />
       </div>
 
