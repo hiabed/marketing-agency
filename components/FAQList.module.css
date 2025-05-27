@@ -158,16 +158,17 @@
   .faqPageContainer {
     flex-direction: column;
     gap: 1.5rem;
+    align-items: center;
   }
 
   .sidebar {
-    width: 100%;
+    /* width: 100%; */
     position: static;
     order: -1;
   }
 
   .sidebarNav {
-    flex-direction: row;
+    /* flex-direction: row; */
     overflow-x: auto;
     gap: 0.5rem;
     padding-bottom: 0.5rem;
