@@ -31,130 +31,18 @@ const ContactForm = () => {
     <div className={styles.formContainer}>
       <div className={styles.formHeader}>
         <h2 className={styles.formTitle}>Contactez-nous</h2>
-        <p className={styles.formDescription}>Remplissez ce formulaire pour être recontacté par l'un de nos experts.</p>
+        <p className={styles.formDescription}>Remplissez ce formulaire pour être recontacté<br/> par l'un de nos experts.</p>
       </div>
-
-      <form onSubmit={handleSubmit} className={styles.contactForm}>
-        <div className={styles.formRow}>
-          <div className={styles.formGroup}>
-            <label htmlFor="prenomNom" className={styles.formLabel}>
-              Prénom et Nom*
-            </label>
-            <input
-              type="text"
-              id="prenomNom"
-              name="prenomNom"
-              value={formData.prenomNom}
-              onChange={handleInputChange}
-              className={styles.formInput}
-              placeholder="------"
-              required
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="entreprise" className={styles.formLabel}>
-              Nom de votre entreprise
-            </label>
-            <input
-              type="text"
-              id="entreprise"
-              name="entreprise"
-              value={formData.entreprise}
-              onChange={handleInputChange}
-              className={styles.formInput}
-              placeholder="------"
-            />
-          </div>
-        </div>
-
-        <div className={styles.formRow}>
-          <div className={styles.formGroup}>
-            <label htmlFor="telephone" className={styles.formLabel}>
-              Téléphone*
-            </label>
-            <input
-              type="tel"
-              id="telephone"
-              name="telephone"
-              value={formData.telephone}
-              onChange={handleInputChange}
-              className={styles.formInput}
-              placeholder="----------"
-              required
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="email" className={styles.formLabel}>
-              Adresse email*
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className={styles.formInput}
-              placeholder="mon-adresse@email.com"
-              required
-            />
-          </div>
-        </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor="commentaires" className={styles.formLabel}>
-            Commentaires (optionnel)
-          </label>
-          <div className={styles.textareaLabel}>Parlez-nous de votre projet !</div>
-          <textarea
-            id="commentaires"
-            name="commentaires"
-            value={formData.commentaires}
-            onChange={handleInputChange}
-            className={styles.formTextarea}
-            rows="4"
-          ></textarea>
-        </div>
-
-        <div className={styles.questionGroup}>
-          <label className={styles.questionLabel}>Vous avez votre entreprise ?*</label>
-          <div className={styles.buttonGroup}>
-            <button
-              type="button"
-              onClick={() => setFormData((prev) => ({ ...prev, avezEntreprise: "oui" }))}
-              className={`${styles.choiceButton} ${formData.avezEntreprise === "oui" ? styles.choiceButtonActive : ""}`}
-            >
-              OUI
-            </button>
-            <button
-              type="button"
-              onClick={() => setFormData((prev) => ({ ...prev, avezEntreprise: "non" }))}
-              className={`${styles.choiceButton} ${formData.avezEntreprise === "non" ? styles.choiceButtonActive : ""}`}
-            >
-              NON
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.checkboxGroup}>
-          <label className={styles.checkboxLabel}>
-            <input
-              type="checkbox"
-              name="accepteConditions"
-              checked={formData.accepteConditions}
-              onChange={handleInputChange}
-              className={styles.checkbox}
-              required
-            />
-            <span className={styles.checkboxText}>
-              J'accepte les conditions générales d'utilisation et la politique de confidentialité
-            </span>
-          </label>
-        </div>
-
-        <button type="submit" className={styles.submitButton}>
-          Être recontacté →
-        </button>
-      </form>
+      <iframe 
+        title="Embedded form" 
+        frameborder="0" 
+        src="https://qk45j2zt.paperform.co/?embed=1&takeover=0&inline=1&popup=0&_d=www.aleo.agency&_in=0&page_url=https://www.aleo.agency/foire-aux-questions/&utm_source=undefined&utm_medium=undefined&utm_campaign=undefined&utm_content=undefined&sc=undefined&utm_term=undefined&id_form1=undefined&email=undefined&telephone=undefined&name=" 
+        width="100%" 
+        height="612px"
+        allowfullscreen 
+        allowpaymentrequest 
+        allow="geolocation *;camera *;microphone *;">
+      </iframe>
     </div>
   )
 }

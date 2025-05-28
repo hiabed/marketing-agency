@@ -11,19 +11,20 @@
 }
 
 .formHeader {
-  margin-bottom: 2.5rem;
+  /* margin-bottom: 2.5rem; */
+  padding-left: 25px;
 }
 
 .formTitle {
-  color: #581c87;
-  font-size: 2.5rem;
+  font-size: 32px;
+  color: rgb(57 7 63);
   font-weight: bold;
   margin-bottom: 1rem;
-  line-height: 1.2;
+  line-height: 36px;
 }
 
 .formDescription {
-  color: #4b5563;
+  color: rgb(57 7 63);
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 0;
