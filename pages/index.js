@@ -6,6 +6,7 @@ import Button from '../components/Button'; // From your original code
 import ClickCount from '../components/ClickCount'; // From your original code
 import styles from './index.module.css'; // The './' indicates the current directory
 import ContactUs from '../components/ContactUs'
+import Footer from '../components/Footer';
 // Import the FAQList component we created
 import FAQList from '../components/FAQList'; // Adjust path if your components folder is structured differently
 
@@ -23,6 +24,7 @@ function FaqPage() { // Renamed for clarity if this is intended to be a page com
       </section>
       <FAQList />
       <ContactUs/>
+      <Footer/>
       {/* <ClickCount /> */}
       {/* <Button onClick={throwError}>Test Error</Button> */}
     </div>
