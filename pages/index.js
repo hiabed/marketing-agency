@@ -23,7 +23,7 @@ function FaqPage() { // Renamed for clarity if this is intended to be a page com
       </section>
       <FAQList />
       <ContactUs/>
-      <ClickCount />
+      {/* <ClickCount /> */}
       {/* <Button onClick={throwError}>Test Error</Button> */}
     </div>
   );
