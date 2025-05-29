@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "./ContactForm.module.css"
+import styles from "../styles/ContactForm.module.css"
 
 const ContactForm = () => {
   return (

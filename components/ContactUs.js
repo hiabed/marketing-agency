@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import styles from "./ContactUs.module.css"
+import styles from "../styles/ContactUs.module.css"
 import ContactForm from "./ContactForm"
 
 const ContactUs = () => {

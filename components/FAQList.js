@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Plus } from "lucide-react"
-import styles from "./FAQList.module.css"
+import styles from "../styles/FAQList.module.css"
 import { faqData } from "./FAQ-data"
 
 const FAQList = () => {
