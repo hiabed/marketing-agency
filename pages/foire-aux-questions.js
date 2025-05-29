@@ -2,13 +2,12 @@
 // If it's a page, the filename dictates the route.
 
 import { useCallback, useEffect, useState } from 'react'; // These were in your original code, keep if needed for other things in this component
-import styles from './index.module.css'; // The './' indicates the current directory
+import styles from '../styles/foire-aux-questions.module.css'; // The './' indicates the current directory
 import ContactUs from '../components/ContactUs'
 import Footer from '../components/Footer';
 import FAQList from '../components/FAQList';
 
-// Your main component, now named to reflect it might be a page or a self-contained FAQ section
-function FaqPage() { // Renamed for clarity if this is intended to be a page component
+function FaqPage() {
   return (
     <div>
       <section className={styles.header}>
@@ -26,4 +25,4 @@ function FaqPage() { // Renamed for clarity if this is intended to be a page com
   );
 }
 
-export default FaqPage; // If this is a page in the `pages` directory, export default is important
+export default FaqPage;
