@@ -9,13 +9,13 @@ function AgenceGraphisme() { // Renamed for clarity if this is intended to be a 
     <div>
       <section className={styles.header}>
         <div className={styles.container}>
-          <h1 className={styles.title}>Foire aux questions ALEO</h1>
-          <h2 className={styles.subtitle}>Une question ? Une réponse !</h2>
-          <p className={styles.paragraph}>Retrouvez ci-dessous toutes nos explications et contactez-nous pour plus d’informations.</p>
+          <h1 className={styles.title}>replace me</h1>
+          <h2 className={styles.subtitle}>replace me</h2>
+          <p className={styles.paragraph}>replace me</p>
           <button className={styles.contact_button}>Nous contacter</button>
         </div>
       </section>
-      <FAQList />
+      {/* <FAQList /> */}
       <ContactUs/>
       <Footer/>
     </div>
