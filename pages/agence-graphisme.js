@@ -12,6 +12,7 @@ import ProcessTimeline from '../components/ProcessTimeline';
 import TestimonialCarousel from '../components/testimonial-carousel';
 import CaseStudySlider from '../components/case-study-slider';
 import TestimonialCard from '../components/testimonial-card'; // Assuming this is a component for individual testimonials
+import FAQSection from '../components/FAQ-section'; // Assuming this is the FAQ section component
 
 function AgenceGraphisme() { // Renamed for clarity if this is intended to be a page component
   return (
@@ -27,6 +28,7 @@ function AgenceGraphisme() { // Renamed for clarity if this is intended to be a 
       <ProcessTimeline />
       <TestimonialCarousel />
       <TestimonialCard />
+      <FAQSection/>
       <ContactUs/>
       <Footer/>
 
