@@ -7,33 +7,23 @@ export default function DesignProcess() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Designer image with decorative elements */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-sky-100 to-sky-200 rounded-xl overflow-hidden shadow-lg aspect-[4/3] relative">
-              {/* Decorative elements */}
-              <div className="absolute top-4 left-4">
-                <Pencil className="h-10 w-10 text-pink-500 transform -rotate-12" />
-                <Sparkles className="h-6 w-6 text-purple-500 absolute -top-2 -left-4" />
-                <Sparkles className="h-4 w-4 text-red-400 absolute top-2 -right-6" />
-              </div>
-
-              {/* Placeholder for designer image */}
-              <div className="w-full h-full flex items-center justify-center p-8">
-                <div className="text-gray-400 text-center">
-                  <p className="text-sm">Designer working on logo creation</p>
-                  <p className="text-xs mt-1 italic">(Image placeholder)</p>
-                </div>
-              </div>
-            </div>
+            {/* image */}
+            <img
+              src="https://www.aleo.agency/_nuxt/img/746778a.png"
+              alt="Graphic Designer"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Right side - Process steps */}
-          <div className="space-y-10">
+          <div className="space-y-6">
             {/* Step 1 */}
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
                 <CheckCircle className="h-6 w-6 text-red-500" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Prise de brief par un graphiste dédié</h3>
+                <h3 className="text-l font-bold text-gray-900 mb-2">Prise de brief par un graphiste dédié</h3>
                 <p className="text-gray-600">
                   Afin de créer un logo qui vous corresponde, définissez vos attentes et vos objectifs avec un expert
                   ALEO.
@@ -47,7 +37,7 @@ export default function DesignProcess() {
                 <CheckCircle className="h-6 w-6 text-red-500" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Création graphique</h3>
+                <h3 className="text-l font-bold text-gray-900 mb-2">Création graphique</h3>
                 <p className="text-gray-600">
                   Votre graphiste dédié vous proposera différentes pistes créatives pour que vous puissiez choisir celle
                   qui vous convient le plus.
@@ -61,7 +51,7 @@ export default function DesignProcess() {
                 <CheckCircle className="h-6 w-6 text-red-500" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Retouches et livraison</h3>
+                <h3 className="text-l font-bold text-gray-900 mb-2">Retouches et livraison</h3>
                 <p className="text-gray-600">
                   Nous vous envoyons différentes propositions de logo et effectuons des retouches afin qu'il soit
                   conforme à vos attentes.

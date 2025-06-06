@@ -57,7 +57,7 @@ export default function FAQSection({ faqData = [] }) {
   // Conditional rendering if no data is available
   return (
     // Outer container with gradient background and padding
-    <section className="w-full py-12 md:py-16 bg-gradient-to-br from-purple-100 via-indigo-100 to-blue-100 font-inter antialiased">
+    <section className="w-[80%] mx-auto min-w-[800px] py-12 md:py-16 bg-gradient-to-br from-purple-100 via-indigo-100 to-blue-100 font-inter antialiased">
       {/* Max width container for defaultDatacontent, centered */}
       <div className="max-w-3xl lg:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}

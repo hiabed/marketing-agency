@@ -34,6 +34,7 @@ export default function ProcessTimeline() {
       description:
         "Afin de créer une image qui vous ressemble, définissez vos objectifs et vos préférences avec un expert ALEO.",
       side: "right",
+      image: "https://www.aleo.agency/_nuxt/image/2327d1.png"
     },
     {
       number: 2,
@@ -41,6 +42,7 @@ export default function ProcessTimeline() {
       description:
         "2 jours de logos créés pour vous ! Votre graphiste dédié vous propose créer votre logo et comprendre vos besoins à votre activité.",
       side: "left",
+      image: "https://www.aleo.agency/_nuxt/image/11616d.png"
     },
     {
       number: 3,
@@ -48,16 +50,18 @@ export default function ProcessTimeline() {
       description:
         "Nous vous envoyons votre logo en présentation avec vous, préférez celui qui vous plaît le plus comprendre parfaitement.",
       side: "right",
+      image: "https://www.aleo.agency/_nuxt/image/10a11d.png"
     },
     {
       number: 4,
       title: "Livraison des différents formats",
       description: "Nous vous envoyons logo, réalisé en tous les formats dont vous avez besoin (vectoriel) !",
       side: "left",
+      image: "https://www.aleo.agency/_nuxt/image/e21045.png"
     },
   ]
 
-  const totalHeight = steps.length * 180 + 150
+  const totalHeight = steps.length * 180 + 110
 
   return (
     <section id="timeline-section" className="py-16 px-4 bg-gradient-to-b from-sky-100 to-sky-200 min-h-screen">
@@ -69,7 +73,7 @@ export default function ProcessTimeline() {
             className="absolute left-1/2 transform -translate-x-px w-0.5 bg-gray-400"
             style={{
               height: `${totalHeight}px`,
-              top: "50px",
+              top: "196px",
             }}
           ></div>
 
@@ -78,7 +82,7 @@ export default function ProcessTimeline() {
             className="absolute left-1/2 transform -translate-x-px w-0.5 bg-red-500 transition-all duration-200 ease-out"
             style={{
               height: `${Math.min(scrollProgress * (totalHeight - 50), totalHeight - 50)}px`,
-              top: "50px",
+              top: "196px",
             }}
           ></div>
 
@@ -101,8 +105,7 @@ export default function ProcessTimeline() {
                 key={step.number}
                 className="relative"
                 style={{
-                  marginTop: `${index === 0 ? 100 : 40}px`,
-                  marginBottom: index === steps.length - 1 ? "0px" : "100px",
+                  marginTop: `5px`,
                 }}
               >
                 {/* Timeline Dot */}
@@ -110,7 +113,7 @@ export default function ProcessTimeline() {
                   className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2 border-white transition-all duration-300 z-20 ${
                     stepProgress > 0 ? "bg-red-500" : "bg-gray-400"
                   }`}
-                  style={{ top: "30px" }}
+                  style={{ top: "190px" }}
                 ></div>
 
                 {/* Step Content */}
@@ -123,7 +126,13 @@ export default function ProcessTimeline() {
                       {/* Right side - Content */}
                       <div className="pl-16 flex items-start gap-6">
                         {/* Image - Made bigger */}
-                        <div className="w-32 h-24 bg-gray-400 rounded-lg shadow-md flex-shrink-0 mt-1"></div>
+                        <div className="w-64 bg-gray-400 rounded-lg shadow-md flex-shrink-0 mt-1">
+                          <img
+                            src={step.image}
+                            alt={`Étape ${step.number}`}
+                            className="w-full h-full object-cover rounded-lg"
+                          />
+                        </div>
 
                         {/* Text Content */}
                         <div className="flex-1">
@@ -153,7 +162,13 @@ export default function ProcessTimeline() {
                         </div>
 
                         {/* Image - Made bigger */}
-                        <div className="w-32 h-24 bg-gray-400 rounded-lg shadow-md flex-shrink-0 mt-1"></div>
+                        <div className="w-64 bg-gray-400 rounded-lg shadow-md flex-shrink-0 mt-1">
+                          <img
+                            src={step.image}
+                            alt={`Étape ${step.number}`}
+                            className="w-full h-full object-cover rounded-lg"
+                          />
+                        </div>
                       </div>
 
                       {/* Right side - Empty for left-aligned steps */}

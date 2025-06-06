@@ -86,9 +86,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 412px;
+  width: 800px;
 }
 
 .imageWrapper {
+  width: 100%;
+  height: 100%;
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
@@ -97,10 +101,14 @@
 }
 
 .designerImage {
+  height: 100%;
   width: 100%;
   height: auto;
   max-width: 400px;
   border-radius: 0.5rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .testimonialBubble {

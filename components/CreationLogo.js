@@ -26,7 +26,7 @@ export default function CreationLogo() {
           <div className={styles.testimonialContainer}>
             <div className={styles.imageWrapper}>
               <img
-                src="/placeholder.svg?height=400&width=300"
+                src="https://www.aleo.agency/_nuxt/image/701f59.png"
                 alt="Patrice - Graphiste professionnel"
                 className={styles.designerImage}
               />
