@@ -1,0 +1,145 @@
+.section {
+  background-color: #ffffff;
+  padding: 4rem 1rem;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.headerText {
+  color: #ef4444;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: #581c87;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.titleRed {
+  color: #ef4444;
+}
+
+.description {
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ctaButton {
+  background-color: #ef4444;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.ctaButton:hover {
+  background-color: #dc2626;
+}
+
+.testimonialContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  padding: 2rem;
+}
+
+.designerImage {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  border-radius: 0.5rem;
+}
+
+.testimonialBubble {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  backdrop-filter: blur(10px);
+}
+
+.quote {
+  font-style: italic;
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.author {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+@media (max-width: 1023px) {
+  .testimonialBubble {
+    position: static;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+
+  .imageWrapper {
+    text-align: center;
+  }
+}

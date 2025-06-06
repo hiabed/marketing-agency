@@ -1,0 +1,136 @@
+.section {
+  background-color: #f9fafb;
+  padding: 4rem 1rem;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.headerText {
+  color: #ef4444;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  color: #581c87;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
+.titleRed {
+  color: #ef4444;
+}
+
+.subtitle {
+  color: #4b5563;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.pricingCard {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  border-radius: 2rem;
+  padding: 4rem 2rem;
+  margin: 0 auto;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricingCard::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.priceLabel {
+  color: #6b7280;
+  font-size: 1.125rem;
+  margin: 0 0 1rem 0;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #ef4444;
+  line-height: 1;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .price {
+    font-size: 7rem;
+  }
+}
+
+.currency {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.taxInfo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ef4444;
+  margin: 0;
+}
+
+.priceDescription {
+  color: #4b5563;
+  font-size: 1.125rem;
+  margin: 2rem 0;
+  line-height: 1.5;
+}
+
+.ctaButton {
+  background-color: #ef4444;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.ctaButton:hover {
+  background-color: #dc2626;
+}
