@@ -5,13 +5,13 @@ import React, { useState } from 'react';
 import { defaultData } from './FAQ-section-questions';
 
 const PlusIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 sm:w-6 sm:h-6">
     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
   </svg>
 );
 
 const MinusIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 sm:w-6 sm:h-6">
     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
   </svg>
 );
@@ -22,10 +22,10 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
       {/* Question part - clickable to toggle answer visibility */}
       <button
         onClick={onClick}
-        className="flex justify-between items-center w-full py-4 sm:py-5 px-4 sm:px-6 text-left focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 transition-colors duration-150 ease-in-out hover:bg-purple-50"
+        className="rounded-[10px] bg-[#d8eeff] flex justify-between items-center w-full py-4 sm:py-5 px-4 sm:px-6 text-left focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 transition-colors duration-150 ease-in-out hover:bg-[rgb(200_222_249)]"
         aria-expanded={isOpen}
       >
-        <span className="text-sm sm:text-base font-medium text-purple-700">{question}</span>
+        <span className="text-sm sm:text-base font-medium">{question}</span>
         {isOpen ? <MinusIcon /> : <PlusIcon />}
       </button>
       {/* Answer part - shown or hidden based on isOpen state */}
@@ -57,7 +57,7 @@ export default function FAQSection({ faqData = [] }) {
   // Conditional rendering if no data is available
   return (
     // Outer container with gradient background and padding
-    <section className="w-[80%] mx-auto min-w-[800px] py-12 md:py-16 bg-gradient-to-br from-purple-100 via-indigo-100 to-blue-100 font-inter antialiased">
+    <section className="w-[80%] mx-auto min-w-[800px] py-12 md:py-16 bg-[rgb(195_225_249)] font-inter antialiased radiused-lg">
       {/* Max width container for defaultDatacontent, centered */}
       <div className="max-w-3xl lg:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
@@ -65,9 +65,10 @@ export default function FAQSection({ faqData = [] }) {
           Une question ?
         </h2>
         {/* Container for FAQ items with white background and rounded corners/shadow */}
-        <div className="bg-white rounded-xl shadow-xl overflow-hidden">
+        <div className="flex bg-[#c3e1f9] !bg-[#c3e1f9] flex-col gap-3 bg-white shadow-xl overflow-hidden rounded-[10px]">
           {currentFaqData.map((item, index) => (
             <FAQItem
+              className="!rounded-[10px]"
               key={item.id || index} // Use item.id if available, otherwise index
               question={item.question}
               answer={item.answer}
